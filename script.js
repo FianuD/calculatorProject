@@ -3,6 +3,30 @@ class Calculator {
         this.previousOperandTextElement = previousOperandTextElement;
         this.currentOperandTextElement = currentOperandTextElement;
     }
+    // function for functionality of clear button to clear all input
+    clear() {
+
+    }
+    // function for functionality of delete button to delete input
+    delete() {
+
+    }
+    // function for selection of numbers
+    appendNumber(number) {
+
+    }
+    // function for operations
+    chooseOperation(operation) {
+
+    }
+    // function to compute the numbers and operations
+    compute() {
+
+    }
+    // function to update display of calculator 
+    updateDisplay() {
+
+    }
 }
 
 const numberButtons = document.getElementsByClassName("js-number");
