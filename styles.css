@@ -37,3 +37,8 @@ header > h1 {
 .calculator-grid > button:hover {
     background-color:#91C8E4;
 }
+
+/* So that AC and Equal Sign span two colums */
+.span-two {
+    grid-column: span 2;
+}
