@@ -15,4 +15,15 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* four columns 100 px wide */
+    grid-template-columns: repeat(4, 100px);
+    /* first row can grow due to input so have minvalue but max at auto for growth */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
 }
