@@ -42,3 +42,27 @@ header > h1 {
 .span-two {
     grid-column: span 2;
 }
+
+.output {
+    /* column -1 is essentially the last column */
+    grid-column: 1 / -1;
+    background-color: #4682A9;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 12px;
+    /* Breaks numbers to next line if input gets too long  */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: #F6F4EB;
+    font-size: 1.5rem
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
