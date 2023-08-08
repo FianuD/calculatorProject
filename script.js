@@ -24,15 +24,51 @@ class Calculator {
     }
     // function for operations
     chooseOperation(operation) {
-
+        if (this.currentOperand ==="") return;
+        if (this.previousOperand !== "") {
+            this.compute();
+        }
+        this.operation = operation;
+        this.previousOperand = this.currentOperand;
+        this.currentOperand = "";
+;
     }
     // function to compute the numbers and operations
     compute() {
-
+        let computation;
+        // converting strings back to numbers/floats for calculations
+        const prev = parseFloat(this.previousOperand);
+        const current = parseFloat(this.currentOperand);
+        // checking if number selected or not. Code won't run if not number.
+        if(isNaN(prev) || isNaN(current)) return;
+        switch (this.operation) {
+            // addition
+            case "+":
+                computation = prev + current
+                break
+            //s ubtraction
+            case "−":
+                computation = prev - current
+                break
+            // division
+            case "÷":
+                computation = prev / current
+                break
+            // multiplication
+            case "×":
+                computation = prev * current
+                break
+            default:
+                return
+        }
+        this.currentOperand = computation;
+        this.operation = undefined;
+        this.previousOperand = "";
     }
     // function to update display of calculator 
     updateDisplay() {
         this.currentOperandTextElement.innerText = this.currentOperand;
+        this.previousOperandTextElement.innerText = this.previousOperand;
     }
 }
 
@@ -55,4 +91,17 @@ Array.prototype.forEach.call(numberButtons, (button) => {
     })
 })
 
-// console.log(typeof(numberButtons));
+// Loop through the operations buttons and add event listener
+Array.prototype.forEach.call(operationButtons, (button) => {
+    button.addEventListener("click", () => {
+        calculator.chooseOperation(button.innerText);
+        calculator.updateDisplay();
+    })
+})
+
+equalsButton.addEventListener("click", button => {
+    calculator.compute();
+    calculator.updateDisplay();
+})
+
+// console.log(operationButtons);
