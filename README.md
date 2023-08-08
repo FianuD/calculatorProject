@@ -36,5 +36,5 @@ From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/foun
 
 ## Author
 
-👤 **Fianu**
+**Fianu**
 * GitHub: [Fianu](https://github.com/FianuD)
