@@ -25,7 +25,7 @@ From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/foun
 * CSS3 **grid** and **flex** to create layout.
 * **Git** and **GitHub** for project management.
 * **Clean code** with **comments** for readability.
-* **Cross tested** on Firefox and Chromium based browsers.
+* Tested on Chromium based browsers.
 
 ## Summary
 
