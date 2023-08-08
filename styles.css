@@ -9,3 +9,10 @@ body {
     margin: 0;
     background-color: #F6F4EB;
 }
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
