@@ -12,7 +12,7 @@ class Calculator {
     }
     // function for functionality of delete button to delete input
     delete() {
-
+        this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
     // function for selection of numbers
     appendNumber(number) {
@@ -99,8 +99,18 @@ Array.prototype.forEach.call(operationButtons, (button) => {
     })
 })
 
-equalsButton.addEventListener("click", button => {
+equalsButton.addEventListener("click", () => {
     calculator.compute();
+    calculator.updateDisplay();
+})
+
+allClearButton.addEventListener("click", () => {
+    calculator.clear();
+    calculator.updateDisplay();
+})
+
+deleteButton.addEventListener("click", () => {
+    calculator.delete();
     calculator.updateDisplay();
 })
 
