@@ -2,10 +2,13 @@ class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement;
         this.currentOperandTextElement = currentOperandTextElement;
+        this.clear();
     }
     // function for functionality of clear button to clear all input
     clear() {
-
+        this.currentOperand = "";
+        this.previousOperand = "";
+        this.operation = "";
     }
     // function for functionality of delete button to delete input
     delete() {
@@ -13,7 +16,11 @@ class Calculator {
     }
     // function for selection of numbers
     appendNumber(number) {
+        // allow only one period for decimals to be appended
+        if(number === "." && this.currentOperand.includes(".")) return;
 
+        // convert to string so numbers clicked get appended and not added mathematically
+        this.currentOperand = this.currentOperand.toString() + number.toString();
     }
     // function for operations
     chooseOperation(operation) {
@@ -25,7 +32,7 @@ class Calculator {
     }
     // function to update display of calculator 
     updateDisplay() {
-
+        this.currentOperandTextElement.innerText = this.currentOperand;
     }
 }
 
@@ -37,5 +44,15 @@ const allClearButton = document.getElementById("js-all-clear");
 const previousOperandTextElement = document.getElementById("js-prev-operand");
 const currentOperandTextElement = document.getElementById("js-curr-operand");
 
+// create calculator, pass elements into constructor
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+
+// Loop through the number buttons and add event listener
+Array.prototype.forEach.call(numberButtons, (button) => {
+    button.addEventListener("click", () => {
+        calculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    })
+})
 
 // console.log(typeof(numberButtons));
