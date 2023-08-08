@@ -1,68 +1,70 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    background-color: #F6F4EB;
+  padding: 0;
+  margin: 0;
+  background-color: #f6f4eb;
 }
 
 header > h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .calculator-grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    /* four columns 100 px wide */
-    grid-template-columns: repeat(4, 100px);
-    /* first row can grow due to input so have minvalue but max at auto for growth */
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  /* four columns 100 px wide */
+  grid-template-columns: repeat(4, 100px);
+  /* first row can grow due to input so have minvalue but max at auto for growth */
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
 .calculator-grid > button {
-    cursor: pointer;
-    font-size: 2rem;
-    color: #F6F4EB;
-    border: 1px solid #91C8E4;
-    outline: none;
-    background-color:#749BC2;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #f6f4eb;
+  border: 1px solid #91c8e4;
+  outline: none;
+  background-color: #749bc2;
 }
 
 .calculator-grid > button:hover {
-    background-color:#91C8E4;
+  background-color: #91c8e4;
 }
 
 /* So that AC and Equal Sign span two colums */
 .span-two {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .output {
-    /* column -1 is essentially the last column */
-    grid-column: 1 / -1;
-    background-color: #4682A9;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    flex-direction: column;
-    padding: 12px;
-    /* Breaks numbers to next line if input gets too long  */
-    word-wrap: break-word;
-    word-break: break-all;
+  /* column -1 is essentially the last column */
+  grid-column: 1 / -1;
+  background-color: #4682a9;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 12px;
+  /* Breaks numbers to next line if input gets too long  */
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 .output .previous-operand {
-    color: #F6F4EB;
-    font-size: 1.5rem
+  color: #f6f4eb;
+  font-size: 1.5rem;
 }
 
 .output .current-operand {
-    color: white;
-    font-size: 2.5rem;
+  color: white;
+  font-size: 2.5rem;
 }
