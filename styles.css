@@ -13,7 +13,7 @@ body {
 .calculator-grid {
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-height: 100vh;
     /* four columns 100 px wide */
     grid-template-columns: repeat(4, 100px);
@@ -24,6 +24,12 @@ body {
 .calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid white;
+    color: #F6F4EB;
+    border: 1px solid #91C8E4;
     outline: none;
+    background-color:#749BC2;
+}
+
+.calculator-grid > button:hover {
+    background-color:#91C8E4;
 }
